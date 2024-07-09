@@ -1,0 +1,19 @@
+- step:
+    name: download_single_dataset
+    image: python:3.10
+    command:
+    - pip install numpy requests
+    - python download_dataset_api.py {parameters}
+    parameters:
+        - name: id
+          type: string
+          optional: false
+        - name: start_version
+          type: string
+          optional: false
+- step:
+    name: download_multiple_predefined
+    image: python:3.10
+    command:
+    - pip install numpy requests
+    - python download_zip_multiple_datasets.py
